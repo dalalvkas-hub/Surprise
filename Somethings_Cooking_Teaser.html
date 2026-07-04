@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something's Cooking...</title>
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Segoe UI,Arial,sans-serif;
+background:linear-gradient(135deg,#120b2d,#3b1d66,#ff5fa2);
+overflow:hidden;
+color:white;
+}
+.card{
+width:min(90%,650px);
+padding:40px;
+text-align:center;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(14px);
+border-radius:24px;
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+h1{font-size:3rem;margin:0 0 15px}
+p{font-size:1.2rem;line-height:1.8;opacity:.95}
+.dot{
+display:inline-block;
+animation:blink 1.2s infinite;
+}
+.dot:nth-child(2){animation-delay:.2s}
+.dot:nth-child(3){animation-delay:.4s}
+@keyframes blink{
+0%,80%,100%{opacity:.2}
+40%{opacity:1}
+}
+.heart{
+position:fixed;
+top:-20px;
+font-size:18px;
+animation:fall linear infinite;
+}
+@keyframes fall{
+to{transform:translateY(110vh)}
+}
+.small{
+margin-top:25px;
+font-size:.95rem;
+opacity:.75;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>👀 Something's Cooking</h1>
+
+<p>
+Just wait a little longer
+<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+</p>
+
+<p>
+Don't make too many plans for your birthday. ❤️<br>
+Someone has been working on a little surprise, just for you.
+</p>
+
+<p style="font-size:1.6rem;">🎁✨</p>
+
+<div class="small">
+Coming Soon...
+</div>
+</div>
+
+<script>
+for(let i=0;i<70;i++){
+const h=document.createElement('div');
+h.className='heart';
+h.innerHTML=['💖','✨','💕'][Math.floor(Math.random()*3)];
+h.style.left=Math.random()*100+'vw';
+h.style.animationDuration=(4+Math.random()*5)+'s';
+h.style.animationDelay=(Math.random()*5)+'s';
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
